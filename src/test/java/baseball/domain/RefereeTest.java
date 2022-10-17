@@ -13,21 +13,17 @@ class RefereeTest {
 
     private Referee referee;
     private Player player;
-    private Computer computer;
+    private Player computer;
 
-    private List<Ball> createTestBalls(int num1, int num2, int num3) {
-        return Arrays.asList(
-                new Ball(0, num1),
-                new Ball(1, num2),
-                new Ball(2, num3)
-        );
+    private List<Integer> createTestBalls(int num1, int num2, int num3) {
+        return Arrays.asList(num1, num2, num3);
     }
 
     @DisplayName("게임 결과 3strike인지 검증")
     @Test
     void isThreeStrike() {
         player = new Player(createTestBalls(1, 2, 3));
-        computer = new Computer(createTestBalls(1, 2, 3));
+        computer = new Player(createTestBalls(1, 2, 3));
         referee = new Referee(player, computer);
 
         GameResultResponseDto responseDto = referee.playGame();
@@ -39,7 +35,7 @@ class RefereeTest {
     @Test
     void isThreeBall() {
         player = new Player(createTestBalls(1, 2, 3));
-        computer = new Computer(createTestBalls(3, 1, 2));
+        computer = new Player(createTestBalls(3, 1, 2));
         referee = new Referee(player, computer);
 
         GameResultResponseDto responseDto = referee.playGame();
@@ -51,7 +47,7 @@ class RefereeTest {
     @Test
     void isNothing() {
         player = new Player(createTestBalls(1, 2, 3));
-        computer = new Computer(createTestBalls(4, 5, 6));
+        computer = new Player(createTestBalls(4, 5, 6));
         referee = new Referee(player, computer);
 
         GameResultResponseDto responseDto = referee.playGame();
@@ -63,7 +59,7 @@ class RefereeTest {
     @Test
     void isOneStrikeOneBall() {
         player = new Player(createTestBalls(1, 2, 3));
-        computer = new Computer(createTestBalls(1, 5, 2));
+        computer = new Player(createTestBalls(1, 5, 2));
         referee = new Referee(player, computer);
 
         GameResultResponseDto responseDto = referee.playGame();
@@ -75,7 +71,7 @@ class RefereeTest {
     @Test
     void isOneStrikeTwoBall() {
         player = new Player(createTestBalls(1, 2, 3));
-        computer = new Computer(createTestBalls(3, 2, 1));
+        computer = new Player(createTestBalls(3, 2, 1));
         referee = new Referee(player, computer);
 
         GameResultResponseDto responseDto = referee.playGame();
@@ -87,7 +83,7 @@ class RefereeTest {
     @Test
     void isTwoStrike() {
         player = new Player(createTestBalls(1, 2, 3));
-        computer = new Computer(createTestBalls(1, 2, 7));
+        computer = new Player(createTestBalls(1, 2, 7));
         referee = new Referee(player, computer);
 
         GameResultResponseDto responseDto = referee.playGame();
@@ -99,7 +95,7 @@ class RefereeTest {
     @Test
     void isTwoBall() {
         player = new Player(createTestBalls(1, 2, 3));
-        computer = new Computer(createTestBalls(3, 7, 1));
+        computer = new Player(createTestBalls(3, 7, 1));
         referee = new Referee(player, computer);
 
         GameResultResponseDto responseDto = referee.playGame();

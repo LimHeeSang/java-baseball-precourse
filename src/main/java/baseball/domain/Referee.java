@@ -4,12 +4,12 @@ import baseball.domain.dto.GameResultResponseDto;
 
 public class Referee {
 
-    private static final int GAME_ROUND = 3;
+    public static final int GAME_ROUND = 3;
 
     private final Player player;
-    private final Computer computer;
+    private final Player computer;
 
-    public Referee(Player player, Computer computer) {
+    public Referee(Player player, Player computer) {
         this.player = player;
         this.computer = computer;
     }
