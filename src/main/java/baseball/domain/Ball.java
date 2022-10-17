@@ -1,29 +1,27 @@
 package baseball.domain;
 
-import java.util.Objects;
-
 public class Ball {
 
-    private final int ball;
+    private final int index;
+    private final int number;
 
-    public Ball(int ball) {
-        this.ball = ball;
+    public Ball(int index, int number) {
+        this.index = index;
+        this.number = number;
     }
 
-    public boolean isSame(Ball ball) {
-        return this.equals(ball);
+    public boolean isStrike(Ball ball) {
+        return index == ball.index
+                && number == ball.number;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Ball ball1 = (Ball) o;
-        return ball == ball1.ball;
+    public boolean isBall(Ball ball) {
+        return index != ball.index
+                && number == ball.number;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(ball);
+    public boolean isNothing(Ball ball) {
+        return !isStrike(ball) && !isBall(ball);
     }
+
 }
