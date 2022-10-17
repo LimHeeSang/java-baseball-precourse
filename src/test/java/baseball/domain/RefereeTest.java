@@ -23,7 +23,7 @@ class RefereeTest {
         );
     }
 
-    @DisplayName("3strike인지 테스트")
+    @DisplayName("게임 결과 3strike인지 검증")
     @Test
     void isThreeStrike() {
         player = new Player(createTestBalls(1, 2, 3));
@@ -33,6 +33,18 @@ class RefereeTest {
         GameResultResponseDto responseDto = referee.playGame();
         assertThat(responseDto.getStrike()).isEqualTo(3);
         assertThat(responseDto.getBall()).isEqualTo(0);
+    }
+
+    @DisplayName("게임 결과 3ball인지 검증")
+    @Test
+    void isThreeBall() {
+        player = new Player(createTestBalls(1, 2, 3));
+        computer = new Computer(createTestBalls(3, 1, 2));
+        referee = new Referee(player, computer);
+
+        GameResultResponseDto responseDto = referee.playGame();
+        assertThat(responseDto.getStrike()).isEqualTo(0);
+        assertThat(responseDto.getBall()).isEqualTo(3);
     }
 
 }
