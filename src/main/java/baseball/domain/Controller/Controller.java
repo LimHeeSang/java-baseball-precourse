@@ -15,22 +15,21 @@ public class Controller {
         Computer computer = new Computer();
 
         boolean reGameFlag = true;
-        while (reGameFlag) {
-            referee = new Referee(new Player(InputView.inputNumber()), computer);
+        referee = new Referee(new Player(InputView.inputNumber()), computer);
 
+        while (reGameFlag) {
             GameResultResponseDto resultResponseDto = referee.playGame();
             OutputView.printResult(resultResponseDto);
 
-            reGameFlag = isRestartGame(resultResponseDto);
+            if (resultResponseDto.isGameWin()) {
+                if (InputView.endGame() == 2) {
+                    break;
+                }
+                referee.changeComputer(new Computer());
+            }
+
+            referee.changePlayer(new Player(InputView.inputNumber()));
         }
 
-    }
-
-    private boolean isRestartGame(GameResultResponseDto resultResponseDto) {
-        if (resultResponseDto.isGameWin()) {
-            referee.changeComputer(new Computer());
-            return (InputView.endGame() == 1);
-        }
-        return true;
     }
 }
