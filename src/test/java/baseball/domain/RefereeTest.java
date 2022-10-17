@@ -102,4 +102,20 @@ class RefereeTest {
         assertThat(responseDto.getStrike()).isEqualTo(0);
         assertThat(responseDto.getBall()).isEqualTo(2);
     }
+
+    @DisplayName("chagnePlayer실행 후 기존 Player와의 게임결과 다른지 검증")
+    @Test
+    void changePlayer() {
+        player = new Player(createTestBalls(1, 2, 3));
+        computer = new Player(createTestBalls(3, 7, 1));
+        referee = new Referee(player, computer);
+
+        Player newPlayer = new Player(createTestBalls(3, 7, 1));
+        GameResultResponseDto result1 = referee.playGame();
+
+        referee.changePlayer(newPlayer);
+        GameResultResponseDto result2 = referee.playGame();
+
+        assertThat(result1).isNotEqualTo(result2);
+    }
 }
