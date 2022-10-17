@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RandomNumberFactory {
+
     public static final int START_INCLUSIVE = 1;
     public static final int END_INCLUSIVE = 9;
 
