@@ -1,4 +1,4 @@
-package baseball.domain.dto;
+package baseball.dto;
 
 public class GameResultResponseDto {
 

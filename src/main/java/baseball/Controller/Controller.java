@@ -1,11 +1,11 @@
-package baseball.domain.Controller;
+package baseball.Controller;
 
 import baseball.domain.Computer;
 import baseball.domain.Player;
 import baseball.domain.Referee;
-import baseball.domain.dto.GameResultResponseDto;
-import baseball.domain.view.InputView;
-import baseball.domain.view.OutputView;
+import baseball.dto.GameResultResponseDto;
+import baseball.view.InputView;
+import baseball.view.OutputView;
 
 public class Controller {
 

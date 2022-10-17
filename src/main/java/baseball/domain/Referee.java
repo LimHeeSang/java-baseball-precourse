@@ -1,6 +1,6 @@
 package baseball.domain;
 
-import baseball.domain.dto.GameResultResponseDto;
+import baseball.dto.GameResultResponseDto;
 
 public class Referee {
 

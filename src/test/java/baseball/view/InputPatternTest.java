@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.view;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.regex.Pattern;
 
-public class PatternTest {
+public class InputPatternTest {
 
     @DisplayName("정상 입력 테스트")
     @Test

@@ -1,11 +1,10 @@
-package baseball.domain;
+package baseball.dto;
 
-import baseball.domain.dto.GameResultResponseDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class GameResultResponseDtoTest {
 
