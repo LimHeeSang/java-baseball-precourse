@@ -19,7 +19,7 @@ public class GameResultResponseDto {
         return ball;
     }
 
-    public boolean isThreeStrike() {
+    public boolean isGameWin() {
         return strike == THREE_STRIKE;
     }
 }

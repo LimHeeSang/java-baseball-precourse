@@ -1,7 +1,6 @@
 package baseball.domain;
 
 import baseball.domain.dto.GameResultResponseDto;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,6 +32,6 @@ class GameResultResponseDtoTest {
     @Test
     void isThreeStrike() {
         responseDto = new GameResultResponseDto(3, 0);
-        assertThat(responseDto.isThreeStrike()).isTrue();
+        assertThat(responseDto.isGameWin()).isTrue();
     }
 }
