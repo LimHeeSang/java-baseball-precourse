@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.domain.dto.GameResultResponseDto;
+
 public class GameResult {
 
     private int strike = 0;

@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.domain.dto.GameResultResponseDto;
+
 public class Referee {
 
     private static final int GAME_ROUND = 3;

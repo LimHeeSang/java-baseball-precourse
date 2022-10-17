@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.domain.dto.GameResultResponseDto;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
