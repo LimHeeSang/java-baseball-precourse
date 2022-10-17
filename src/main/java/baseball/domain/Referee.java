@@ -7,7 +7,7 @@ public class Referee {
     public static final int GAME_ROUND = 3;
 
     private Player player;
-    private final Player computer;
+    private Player computer;
 
     public Referee(Player player, Player computer) {
         this.player = player;
@@ -44,5 +44,9 @@ public class Referee {
 
     public void changePlayer(Player newPlayer) {
         player = newPlayer;
+    }
+
+    public void changeComputer(Computer newComputer) {
+        computer = new Computer();
     }
 }
