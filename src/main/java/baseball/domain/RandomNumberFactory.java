@@ -5,11 +5,11 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RandomNumber {
+public class RandomNumberFactory {
     public static final int START_INCLUSIVE = 1;
     public static final int END_INCLUSIVE = 9;
 
-    private RandomNumber() {
+    private RandomNumberFactory() {
     }
 
     public static List<Integer> createRandomNumbers() {
