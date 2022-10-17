@@ -6,7 +6,7 @@ public class Referee {
 
     public static final int GAME_ROUND = 3;
 
-    private final Player player;
+    private Player player;
     private final Player computer;
 
     public Referee(Player player, Player computer) {
@@ -40,5 +40,9 @@ public class Referee {
         if (playerBall.isBall(computerBall)) {
             gameResult.increaseBall();
         }
+    }
+
+    public void changePlayer(Player newPlayer) {
+        player = newPlayer;
     }
 }
