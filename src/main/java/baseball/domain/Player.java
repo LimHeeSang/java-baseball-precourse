@@ -9,4 +9,8 @@ public class Player {
     public Player(List<Ball> balls) {
         this.balls = balls;
     }
+
+    public Ball throwRoundBall(int roundNumber) {
+        return balls.get(roundNumber);
+    }
 }
