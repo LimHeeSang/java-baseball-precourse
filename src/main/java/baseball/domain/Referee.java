@@ -18,8 +18,8 @@ public class Referee {
         GameResult gameResult = new GameResult();
 
         for (int round = 0; round < GAME_ROUND; round++) {
-            Ball playBall = player.throwRoundBall(round);
-            playOneRound(playBall, gameResult);
+            Ball playerBall = player.throwRoundBall(round);
+            playOneRound(playerBall, gameResult);
         }
 
         return gameResult.toResponseDto();
@@ -47,6 +47,6 @@ public class Referee {
     }
 
     public void changeComputer(Computer newComputer) {
-        computer = new Computer();
+        computer = newComputer;
     }
 }
