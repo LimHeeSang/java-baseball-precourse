@@ -31,4 +31,10 @@ class BallTest {
     void isBall() {
         assertThat(ball1.isBall(ball3)).isTrue();
     }
+
+    @DisplayName("두개의 볼이 낫싱인지 인지 검증")
+    @Test
+    void isNothing() {
+        assertThat(ball1.isNothing(ball4)).isTrue();
+    }
 }
