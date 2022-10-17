@@ -59,7 +59,7 @@ class RefereeTest {
         assertThat(responseDto.getBall()).isEqualTo(0);
     }
 
-    @DisplayName("게임 결과 1strike1ball인지 검증")
+    @DisplayName("게임 결과 1strike 1ball인지 검증")
     @Test
     void isOneStrikeOneBall() {
         player = new Player(createTestBalls(1, 2, 3));
@@ -69,5 +69,17 @@ class RefereeTest {
         GameResultResponseDto responseDto = referee.playGame();
         assertThat(responseDto.getStrike()).isEqualTo(1);
         assertThat(responseDto.getBall()).isEqualTo(1);
+    }
+
+    @DisplayName("게임 결과 2strike 인지 검증")
+    @Test
+    void isTwoStrike() {
+        player = new Player(createTestBalls(1, 2, 3));
+        computer = new Computer(createTestBalls(1, 2, 7));
+        referee = new Referee(player, computer);
+
+        GameResultResponseDto responseDto = referee.playGame();
+        assertThat(responseDto.getStrike()).isEqualTo(2);
+        assertThat(responseDto.getBall()).isEqualTo(0);
     }
 }
