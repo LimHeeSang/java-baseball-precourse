@@ -47,4 +47,16 @@ class RefereeTest {
         assertThat(responseDto.getBall()).isEqualTo(3);
     }
 
+    @DisplayName("게임 결과 nothing인지 검증")
+    @Test
+    void isNothing() {
+        player = new Player(createTestBalls(1, 2, 3));
+        computer = new Computer(createTestBalls(4, 5, 6));
+        referee = new Referee(player, computer);
+
+        GameResultResponseDto responseDto = referee.playGame();
+        assertThat(responseDto.getStrike()).isEqualTo(0);
+        assertThat(responseDto.getBall()).isEqualTo(0);
+    }
+
 }
