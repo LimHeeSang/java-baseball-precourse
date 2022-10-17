@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 class GameResultResponseDtoTest {
 
     private GameResultResponseDto responseDto;
@@ -18,12 +20,19 @@ class GameResultResponseDtoTest {
     @DisplayName("dto getStrike 검증")
     @Test
     void getStrike() {
-        Assertions.assertThat(responseDto.getStrike()).isEqualTo(1);
+        assertThat(responseDto.getStrike()).isEqualTo(1);
     }
 
     @DisplayName("dto getBall 검증")
     @Test
     void getBall() {
-        Assertions.assertThat(responseDto.getBall()).isEqualTo(2);
+        assertThat(responseDto.getBall()).isEqualTo(2);
+    }
+
+    @DisplayName("3strike 인지 검증")
+    @Test
+    void isThreeStrike() {
+        responseDto = new GameResultResponseDto(3, 0);
+        assertThat(responseDto.isThreeStrike()).isTrue();
     }
 }
