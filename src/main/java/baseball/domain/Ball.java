@@ -10,6 +10,10 @@ public class Ball {
         this.ball = ball;
     }
 
+    public boolean isSame(Ball ball) {
+        return this.equals(ball);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
