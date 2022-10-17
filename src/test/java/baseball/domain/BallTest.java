@@ -20,9 +20,15 @@ class BallTest {
         ball4 = new Ball(3, 3);
     }
 
-    @DisplayName("볼이 스트라이크 인지 검증")
+    @DisplayName("두개의 볼이 스트라이크 인지 검증")
     @Test
     void isStrike() {
         assertThat(ball1.isStrike(ball2)).isTrue();
+    }
+
+    @DisplayName("두개의 볼이 볼인지 인지 검증")
+    @Test
+    void isBall() {
+        assertThat(ball1.isBall(ball3)).isTrue();
     }
 }
