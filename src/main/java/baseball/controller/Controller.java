@@ -10,6 +10,7 @@ import baseball.view.OutputView;
 public class Controller {
 
     public static final int END_NUMBER = 2;
+
     private Referee referee;
 
     public void run() {
